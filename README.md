@@ -40,3 +40,25 @@ Example :
 ```sql
 gfortran rectangle.o square.o -o shapes.out
 ```
+
+<br />
+
+### Creating dynamic libraries
+In Linux (.so files):
+```python
+gfortran -shared -fPIC -o NAMEOFLIBRARY.so NAMEOFPROGRAM-01.f90 NAMEOFPROGRAM-02.f90 ... NAMEOFPROGRAM-N.f90
+```
+Example :
+```sql
+gfortran -shared -fPIC -o libgeometry.so squares.f90 triangles.f90
+```
+In Windows (.dll files):
+Example :
+```sql
+gfortran -shared -o libgeometry.dll squares.f90 triangles.f90
+```
+In MacOS (.dylib files):
+Example :
+```sql
+gfortran -dynamiclib -o libgeometry.dylib squares.f90 triangles.f90
+```
